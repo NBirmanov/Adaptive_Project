@@ -1,0 +1,84 @@
+@import "../base/reset.scss";
+@import "../base/vars.scss";
+@import "../base/mixins.scss";
+
+.footer__top {
+    min-height: 270px;
+    background: $footer-bg;
+}
+
+.footer__content {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 170px;
+    column-gap: 30px;
+    grid-auto-flow: dense;
+}
+
+.footer__link-title {
+    @include text($white-color, $font-main, 16px, none, 700, 24px, 0.1px);
+}
+
+.footer__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer__link {
+    @include text($white-color, $font-main, 14px, none, 600, 24px, 0.2px);
+
+    img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+}
+
+.footer__bottom {
+    @extend %flex;
+    flex-wrap: wrap;
+    height: 74px;
+}
+
+.footer__bottom-text {
+    @include text($secondary-color, $font-main, 14px, none, 600, 24px, 0.2px)
+}
+
+.footer__bottom-btn {
+    width: 24px;
+    height: 24px;
+    background: $white-color;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: $mobile) {
+    .footer__top {
+        height: 1063px;
+        margin: auto;
+    }
+    .footer__content {
+       display: flex;
+       flex-direction: column;
+       padding-left: 87px;
+    }
+    .footer__bottom {
+        width: 236px;
+        height: 202px;
+        .footer__bottom-text {
+            padding-top: 25px;
+            padding-bottom: 50px;
+        }
+    }
+    .footer__bottom-btn {
+        margin-bottom: 30px;
+    }
+
+    .footer__block {
+        margin-bottom: 30px;
+    }
+    .footer__link-title{
+        padding-bottom: 20px;
+    }
+}

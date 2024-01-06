@@ -1,0 +1,42 @@
+@import "../base/reset.scss";
+@import "../base/vars.scss";
+@import "../base/mixins.scss";
+
+.consulting {
+    @extend %flex;
+    min-height: 142px;
+}
+
+.consulting__title {
+    @include text($title-color, $font-main, 24px, none, 700, 32px, 0.1px);
+}
+
+.consulting__subtitle {
+    @include text($secondary-color, $font-main, 14px, none, 500, 20px, 0.2px);
+}
+
+.consulting__btn {
+    width: 160px;
+    height: 58px;
+    border-radius: 5px;
+    background: $accent-bg;
+    @include text($white-color, $font-main, 14px, none, 700, 28px, 0.2px);
+}
+
+@media screen and (max-width: $mobile) {
+    .consulting {
+        flex-direction: column;
+        align-items: center;
+        height: 302px;
+        padding: 40px 0;
+    }
+    .consulting__text {
+        width: 242px;
+    }
+    .consulting__title {
+        padding-bottom: 10px;
+    }
+    .consulting__subtitle {
+        width: 208px;
+    }
+}

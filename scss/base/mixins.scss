@@ -1,0 +1,21 @@
+%flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin text($color, $ff, $fz, $fs, $fw, $ln, $letter-spacing) {
+    color: $color;
+    font-family: $ff;
+    font-size: $fz;
+    font-style: $fs;
+    font-weight: $fw;
+    line-height: $ln;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin mediaMobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}

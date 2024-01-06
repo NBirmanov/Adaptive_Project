@@ -1,0 +1,202 @@
+@import "../base/reset.scss";
+@import "../base/vars.scss";
+@import "../base/mixins.scss";
+.header {
+    max-width: 1440px;
+    min-height: 793px;
+    background-image: url(../images/cover.png);
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.header__top-flex {
+    max-width: 1046px;
+    @extend %flex;
+    margin: auto;
+    padding-top: 23px;
+}
+
+.header__top-main {
+    @extend %flex;
+    width: 503px;
+}
+
+.header__logo-text {
+    @include text($title-color, $font-main, 24px, none, 700, 32px, 0.1px);
+}
+
+.nav {
+    margin-left: 117px;
+    ul {
+        @extend %flex;
+        width: 280px;
+        a {
+            @include text($secondary-color, $font-main, 14px, none, 600, 24px, 0.2px);
+        }
+    }
+}
+
+.nav-adaptive {
+    display: none;
+    width: 121px;
+    height: 532px;
+    position: relative;
+    top: 100px;
+    left: 146px;
+    a {
+        @include text($secondary-color, $font-main, 30px, none, 400, 45px, 0.2px);
+    }
+    li {
+        padding-bottom: 30px;
+    }
+}
+
+.header__burger-menu{
+    pointer-events: none;
+}
+
+.header__burger-btn {
+    display: none;
+    background: $white-color;
+    margin-right: 24px;
+}
+
+.header__content {
+    max-width: 1046px;
+    margin: auto;
+    padding-top: 116px;
+}
+
+.header__content-title {
+    @include text($title-color, $font-main, 58px, none, 800, 80px, 0.2px);
+    width: 509px;
+}
+
+.header__content-subtitle {
+    @include text($secondary-color, $font-main, 20px, none, 500, 30px, 0.2px);
+    padding: 35px 0;
+    width: 376px;
+}
+
+.header__content-actions {
+    @extend %flex;
+    width: 340px;
+}
+
+.header__content-btn{
+    width: 154px;
+    height: 48px;
+    border-radius: 37px;
+    border: 1px solid $main-bg;
+    @include text($main-bg, $font-main, 14px, none, 700, 28px, 0.2px);
+    transition: 1s;
+}
+
+.header__content-btn:hover {
+    width: 185px;
+    height: 48px;
+    border-radius: 37px;
+    background: $accent-bg;
+    @include text($white-color, $font-main, 14px, none, 700, 28px, 0.2px);
+}
+
+
+.header__content-block {
+    @extend %flex;
+    flex-wrap: wrap;
+    max-width: 1046px;
+    max-height: 788px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.content__block {
+    width: 328px;
+    height: 210px;
+    background: $white-color;
+    padding: 35px 35px;
+    transition: 1s;
+    margin: auto;
+}
+
+.content__block:hover {
+    background: $main-bg;
+    .content__block-title {
+        @include text($white-color, $font-main, 23px, none, 700, 32px, 0.1px);
+    }
+    .content__block-text {
+        @include text($white-color, $font-main, 14px, none, 500, 20px, 0.2px);
+    }
+}
+
+.content__block-title {
+    @include text($title-color, $font-main, 23px, none, 700, 32px, 0.1px);
+    padding: 10px 0;
+}
+
+.content__block-text {
+    @include text($secondary-color, $font-main, 14px, none, 500, 20px, 0.2px);
+}
+
+@media screen and (max-width: $mobile) {
+    .header {
+        background-image: url(../images/header/cover.png);
+        height: 2026px;
+    }
+    .header__top {
+        background: $white-color;
+    }
+
+    .header__top-flex {
+        width: 341px;
+        min-height: 104px;
+        align-items: center;
+        margin: auto;
+    }
+
+    .nav {
+        display: none;
+    }
+    .nav-adaptive {
+        display: none;
+    }
+    
+    .header__content-title {
+        width: 335px;
+        @include text($title-color, $font-main, 40px, none, 700, 57px, 0.2px);
+        margin: auto;
+        text-align: center;
+    }
+    .header__content {
+        height: 1365px;
+    }
+    .header__content-subtitle {
+        width: 279px;
+        text-align: center;
+        margin: auto;
+    }
+    .header__content-actions {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        .header__content-btn {
+            margin-bottom: 25px;
+        }
+    }
+    
+   
+    .header__content-block  {
+        flex-direction: column;
+        align-items: center;
+        .content__block {
+            margin-bottom: 30px;
+        }
+    }
+    .header__burger-btn {
+        display: block;
+    }
+    .header__burger-menu {
+        pointer-events: painted;
+        background: $white-color;
+    }
+}

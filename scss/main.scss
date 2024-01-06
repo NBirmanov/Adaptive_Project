@@ -1,0 +1,31 @@
+@import "./base/reset.scss";
+@import "./base/vars.scss";
+@import "./base/mixins.scss";
+@import "./blocks/header.scss";
+@import "./blocks/choose.scss";
+@import "./blocks/advice.scss";
+@import "./blocks/contact.scss";
+@import "./blocks/consulting.scss";
+@import "./blocks/footer.scss";
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+body {
+    background: #FAFAFA;
+}
+
+.title {
+    @include text($title-color, $font-main, 40px, none, 700, 57px, 0.2px, );
+    text-align: center;
+}
+
+.subtitle {
+    @include text($secondary-color, $font-main, 14px, none, 500, 20px, 0.2px);
+    max-width: 470px;
+    margin: auto;
+    text-align: center;
+}
+

@@ -1,0 +1,75 @@
+@import "../base/reset.scss";
+@import "../base/vars.scss";
+@import "../base/mixins.scss";
+
+.advice {
+    padding-top: 125px;
+    padding-bottom: 223px;
+}
+
+.advice__subtitle {
+    max-width: 470px;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.advice__content {
+    @extend %flex;
+    flex-wrap: wrap;
+}
+
+.advice__content-block {
+    background: $white-color;
+    width: 232px;
+    height: 159px;
+    margin-top: 45px;
+    margin: auto;
+
+    .advice__content-text {
+        padding: 30px 30px 25px 30px;
+
+        .advice__content-title {
+            @include text($title-color, $font-main, 16px, none, 700, 24px, 0.1px);
+        }
+
+        .advice__content-subtitle {
+            @include text($secondary-color, $font-main, 14px, none, 500, 240x, 0.2px);
+            height: 60px;
+
+        }
+    }
+    img {
+        margin-bottom: 21px;
+    }
+}
+.advice__content-block:hover {
+    position: relative;
+    .advice__content-text {
+        margin-top: 163px;
+    }
+    img{
+        position: absolute;
+        top: 25px;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .advice__title {
+        width: 180px;
+        margin: auto;
+        text-align: center;
+    }
+    .advice__subtitle {
+        width: 225px;
+        margin: auto;
+        text-align: center;
+    }
+    .advice__content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .advice__content-block {
+        margin-bottom: 130px;
+    }
+}
